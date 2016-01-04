@@ -15,9 +15,15 @@ module.exports = userController = app.controller "user", ->
       res.render 'login'
 
   @action 'signin', (req, res, callback) ->
-    username = req.get('username') or req.cookies?.user or req.get('user')?.name
+    username = req.get('username')
+    uid = req.cookies?.user or req.get('user')?._id
 
-    userModel.findOne name: username
+    if username
+      condition = name: username
+    else
+      condition = _id: uid
+
+    userModel.findOne condition
     .exec()
     .then (user, err) ->
 
