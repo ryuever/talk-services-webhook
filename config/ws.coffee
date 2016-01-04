@@ -1,7 +1,7 @@
 path = require 'path'
 
 module.exports =
-  accountUrl: 'http://125.120.154.178:7510'
-  mongodb: 'mongodb://myUserAdmin:abc123@125.120.154.178:27017/admin'
+  accountUrl: 'https://www.jianliao.com'
+  mongodb: 'mongodb://root:root@192.168.0.21:27017/admin'
   mongoAuthDB: 'admin'
-  cookiesDomain: '.125.120.154.178'
+  cookiesDomain: '.jianliao.com'
