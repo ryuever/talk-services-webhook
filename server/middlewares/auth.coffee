@@ -7,7 +7,16 @@ _user = (req, res, callback = ->) ->
   .exec()
   .then (user) ->
 
-    return redirect '/' unless user
+    unless user
+      cookieOptions =
+        domain: config.cookieDomain
+        expires: new Date (Date.now() + 86400 * 1000)
+
+      res.clearCookie 'user', cookieOptions
+
+      req.session.destroy ()->
+        return res.redirect '/'
+
     req.set 'user', user
     callback()
 
