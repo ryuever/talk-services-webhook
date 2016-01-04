@@ -1,0 +1,11 @@
+div#signup-modal.modal-single-input.modal.fade.hide
+  div.modal-header
+    button.close(data-dismiss='modal') x
+    h3 Sign up
+  div.modal-body
+    form(method='post' action='/signup')#signup-form.well.span5
+      p Please input your user name
+      input#signup-username.modal-input(type="text", name="username").span5.required
+  div.modal-footer
+    button(data-dismiss="modal")#signup-cancel.btn Cancel
+    button(type="submit")#signup-submit.btn.btn-primary Submit

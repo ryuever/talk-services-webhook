@@ -1,0 +1,15 @@
+div#signin-modal.modal-single-input.modal.fade.hide
+  div.modal-header
+    button.close(data-dismiss='modal') x
+    h3 Sign in
+  div.modal-body
+    form(method='post' action='/signin')#signin-form.well.span5
+      p Please input your user name
+      input#signin-username.modal-input(type="text", name="username").span5.required
+
+      hr
+    button.btn.btn-default#create-account Create An Account?
+
+  div.modal-footer
+    button(data-dismiss="modal")#signin-cancel.btn Cancel
+    button(type="submit")#signin-submit.btn.btn-primary Submit

@@ -1,0 +1,12 @@
+div#add-service.modal-single-input.modal.fade.hide
+  div.modal-header
+    button.close(data-dismiss='modal') x
+    h3 Add an element
+  div.modal-body
+    p Please input a service display name
+    input#add-service-name.modal-input(type="text", name="name").span5.required
+    p Please input a service identify name
+    input#add-service-refer.modal-input(type="text", name="refer").span5.required
+  div.modal-footer
+    button(data-dismiss="modal")#add-service-cancel.btn.btn-primary Cancel
+    button(type='submit')#add-service-submit.btn.btn-primary Submit

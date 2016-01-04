@@ -1,0 +1,15 @@
+html
+  head
+    block title
+    link(rel='stylesheet', href='/vendor/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/style.css')
+    script(src="/vendor/jquery-1.11.3.min.js")
+    script(src="/vendor/socket.io-1.2.0.js")
+    block script
+  body
+    .content
+      block content
+        .navi
+          block navi
+        .main
+          block main

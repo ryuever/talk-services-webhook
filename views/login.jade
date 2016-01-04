@@ -1,0 +1,11 @@
+extends layout
+block script
+  script(src="/js/views/login.js")
+  script(src='/vendor/bootstrap-modal.js')
+  script(src='/vendor/bootstrap-transition.js')
+block title
+  title Sign In
+block navi
+  include modals/signin
+  include modals/signup
+  include modals/find-account

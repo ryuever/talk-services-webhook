@@ -1,0 +1,34 @@
+extends layout
+- user = typeof(user) != 'undefined' ? user : {}
+- integrations = typeof(integrations) != 'undefined' ? integrations : {}
+block title
+  title #{title}
+
+block script
+  script(src="/js/views/integration.js")
+  script(src="/js/views/index.js")
+  script(src='/vendor/bootstrap-modal.js')
+  script(src='/vendor/bootstrap-transition.js')
+
+block navi
+  #navi-title
+    p Please click to create a connection
+
+  #navi-main
+    if integrations
+      each item in integrations
+        .opt-item
+          span.delete-service X
+          button.service-link-btn(refer="#{item.refer}" hashId="#{item.hashId}") #{item.name}
+    button.service-btn#service-add-btn(value='add') +
+    include modals/add-service
+    include modals/confirm
+    include modals/alert
+  #navi-footer
+    if user
+      button.btn.btn-default#signin #{user.name}
+    a(href='/logout' role='button' class='btn btn-default' id='link-logout') logout
+block main
+  #prompt
+  span#flag(style="display: none")
+  #message

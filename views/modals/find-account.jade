@@ -1,0 +1,11 @@
+div#find-account-modal.modal-single-input.modal.fade.hide
+  div.modal-header
+    button.close(data-dismiss='modal') x
+    h3 Find your account
+  div.modal-body
+    form(method='post' action='/findaccount')#find-account-form.well.span5
+      p Please input your user name
+      input#find-account-username.modal-input(type="text", name="email").span5.required
+  div.modal-footer
+    button(data-dismiss="modal")#find-account-cancel.btn Cancel
+    button(type="submit")#find-account-submit.btn.btn-primary Submit
